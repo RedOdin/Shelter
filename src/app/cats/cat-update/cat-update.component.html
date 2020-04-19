@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center">
+  <div class="w-50 mt-4">
+    <form class="container d-flex flex-column">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Name:</label>
+        <input type="text"
+               class="form-control"
+               id="exampleFormControlInput1"
+               required
+               name="name"
+               [(ngModel)]="name">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description:</label>
+        <textarea class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  name="description"
+                  [(ngModel)]="description"></textarea>
+      </div>
+      <button type="submit"
+              class="btn btn-success align-self-center"
+              (click)="updateCat()">Update</button>
+    </form>
+  </div>
+</div>

@@ -5,33 +5,25 @@
     <th scope="col">Name</th>
     <th scope="col">Description</th>
     <th scope="col">
-      <button class="btn btn-sm btn-success w-100">Insert</button>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-sm btn-success w-25 text-truncate"
+                (click)="insertCatBreed()">Insert</button>
+      </div>
     </th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td class="text-wrap">Mark Mark MarkMarkMarkMarkMa rkMarkMarkMarkMarkM arkMarkMarkM arkMarkMarkMar kMarkMarkMa rkMarkMarkMark MarkM arkMarkMarkM arkMarkMarkM arkMar kMarkM arkMark MarkM a rkMarkMarkMa rkMark M ar kMarkMa rkMarkM arkMa rkMa rkMar kMa rkMar kMar kMarkMarkMa rkMar Mar kMark</td>
+  <tr *ngFor="let catBreed of catBreeds; trackBy: trackByFn">
+    <th scope="row">{{catBreed.idCatBreeds}}</th>
+    <td>{{catBreed.name}}</td>
+    <td class="text-wrap">{{catBreed.description}}</td>
     <td>
       <div class="d-flex justify-content-end">
-        <div class="d-flex flex-column">
-          <button class="btn btn-sm btn-success">Update</button>
-          <button class="btn btn-sm btn-danger">Delete</button>
-        </div>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>
-      <div class="d-flex justify-content-end">
-        <div class="d-flex flex-column">
-          <button class="btn btn-sm btn-success">Update</button>
-          <button class="btn btn-sm btn-danger">Delete</button>
+        <div class="d-flex flex-column w-25">
+          <button class="btn btn-sm btn-success text-truncate"
+                  (click)="updateCatBreed(catBreed)">Update</button>
+          <button class="btn btn-sm btn-danger text-truncate"
+                  (click)="deleteCatBreed(catBreed)">Delete</button>
         </div>
       </div>
     </td>

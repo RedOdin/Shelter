@@ -22,7 +22,6 @@ export class TablesComponent implements OnInit {
   }
 
   public showBreedsForCats(): void {
-    console.log(123);
     this.router.navigate(['/breeds-for-cats']);
   }
 
