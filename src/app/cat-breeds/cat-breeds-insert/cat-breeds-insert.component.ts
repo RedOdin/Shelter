@@ -21,6 +21,5 @@ export class CatBreedsInsertComponent {
       .subscribe();
 
     this.router.navigate(['cat-breeds']);
-    console.log(123);
   }
 }

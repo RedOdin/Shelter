@@ -8,23 +8,21 @@
     <th class="col-2">
       <div class="d-flex justify-content-end">
         <button class="btn btn-sm btn-success w-50 text-truncate"
-                >Insert</button>
+                (click)="insertBreedForCat()">Insert</button>
       </div>
     </th>
   </tr>
   </thead>
   <tbody>
-  <tr class="row">
-    <th class="col-1">1</th>
-    <td class="col-4">fsdfsd</td>
-    <th class="col-1" scope="row">2</th>
-    <td class="col-4 text-wrap">fsdfsdf</td>
+  <tr class="row" *ngFor="let breedForCat of breedsForCats; trackBy: trackByFn">
+    <th class="col-1" scope="row">{{breedForCat.idCats}}</th>
+    <td class="col-4"><a routerLink="/cats">{{breedForCat.nameCat}}</a></td>
+    <th class="col-1" scope="row">{{breedForCat.idCatBreed}}</th>
+    <td class="col-4"><a routerLink="/cat-breeds">{{breedForCat.nameBreed}}</a></td>
     <td class="col-2">
       <div class="d-flex justify-content-end">
-        <div class="d-flex flex-column w-50">
-          <button class="btn btn-sm btn-danger text-truncate"
-                  >Delete</button>
-        </div>
+          <button class="btn btn-sm btn-danger text-truncate w-50"
+                  (click)="deleteCatForBreed(breedForCat)">Delete</button>
       </div>
     </td>
   </tr>

@@ -1,1 +1,35 @@
-<p>breeds-for-cats-insert works!</p>
+<div class="d-flex justify-content-center">
+  <div class="w-50 mt-4">
+    <form class="container d-flex flex-column">
+      <div class="form-group">
+        <label for="exampleFormControlSelect1"># Cats:</label>
+        <select class="form-control"
+                id="exampleFormControlSelect1"
+                required
+                name="cats"
+                [(ngModel)]="cat">
+          <option *ngFor="let cat of cats; trackBy: trackByFn"
+                  value="{{cat.idCats}}">
+            {{cat.idCats}} ({{cat.name}})
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2"># Cat Breeds:</label>
+        <select  class="form-control"
+                 id="exampleFormControlSelect2"
+                 required
+                 name="catBreeds"
+                 [(ngModel)]="catBreed">
+          <option *ngFor="let catBreed of catBreeds; trackBy: trackByFn"
+                  value="{{catBreed.idCatBreeds}}">
+            {{catBreed.idCatBreeds}} ({{catBreed.name}})
+          </option>
+      </select>
+      </div>
+      <button type="submit"
+              class="btn btn-success align-self-center"
+              (click)="insertBreedForCat()">Insert</button>
+    </form>
+  </div>
+</div>

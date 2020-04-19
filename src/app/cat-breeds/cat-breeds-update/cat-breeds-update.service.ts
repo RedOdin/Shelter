@@ -9,7 +9,6 @@ export class CatBreedUpdateService{
   }
 
   public sendDataCatBreed(catBreedData: ICatBreedModel): Observable<any> {
-    console.log(catBreedData.idCatBreeds);
     return this.http.post(`http://localhost:8000/cat_breeds/${catBreedData.idCatBreeds}`, catBreedData );
   }
 

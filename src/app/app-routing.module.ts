@@ -8,6 +8,7 @@ import { CatInsertComponent } from './cats/cat-insert/cat-insert.component';
 import { CatUpdateComponent } from './cats/cat-update/cat-update.component';
 import { CatBreedsInsertComponent } from './cat-breeds/cat-breeds-insert/cat-breeds-insert.component';
 import { CatBreedsUpdateComponent } from './cat-breeds/cat-breeds-update/cat-breeds-update.component';
+import { BreedsForCatsInsertComponent } from './breeds-for-cats/breeds-for-cats-insert/breeds-for-cats-insert.component';
 
 const APP_ROUTE = {
   HOME: '',
@@ -48,8 +49,12 @@ const routes: Routes = [
     component: CatBreedsInsertComponent
   },
   {
-    path: `${APP_ROUTE.CAT_BREEDS}/${APP_ROUTE.UPDATE}/:id}`,
+    path: `${APP_ROUTE.CAT_BREEDS}/${APP_ROUTE.UPDATE}/:id`,
     component: CatBreedsUpdateComponent
+  },
+  {
+    path: `${APP_ROUTE.BREEDS_FOR_CATS}/${APP_ROUTE.INSERT}`,
+    component: BreedsForCatsInsertComponent
   }
 ];
 

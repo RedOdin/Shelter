@@ -38,6 +38,5 @@ export class CatUpdateComponent implements OnInit {
       .subscribe();
 
     this.router.navigate(['cats']);
-    console.log(this.idCats);
   }
 }

@@ -22,9 +22,9 @@ export class CatBreedsUpdateComponent implements OnInit {
   public ngOnInit(): void {
     this.idCatBreeds = this.activateRoute.snapshot.params['id'];
     this.catBreedUpdateService.getCatBreed(this.idCatBreeds)
-      .subscribe((cat: ICatBreedModel) => {
-        this.name = cat.name;
-        this.description = cat.description;
+      .subscribe((catBreed: ICatBreedModel) => {
+        this.name = catBreed.name;
+        this.description = catBreed.description;
       })
   }
 
